@@ -41,7 +41,8 @@ data_mean_std <- data[,c(1,2,index3)] # tidy data set
 # grouped by subject-label and activity-label
 data_mean_summary <- data_mean_std
 data_mean_summary <- group_by(data_mean_summary, subjectLabel, activityLabel)
+data_mean_summary <- data.frame(summarise_all(data_mean_summary))
 
-# save file as .csv
+# save file as .txt
 write.table(data_mean_std, file="data_mean_std.txt", row.names = FALSE)
 write.table(data_mean_summary, file="data_mean_summary.txt", row.names = FALSE)
