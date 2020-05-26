@@ -43,5 +43,5 @@ data_mean_summary <- data_mean_std
 data_mean_summary <- group_by(data_mean_summary, subjectLabel, activityLabel)
 
 # save file as .csv
-write.csv(data_mean_std, file="data_mean_std.csv")
-write.csv(data_mean_summary, file="data_mean_summary.csv")
+write.table(data_mean_std, file="data_mean_std.txt", row.names = FALSE)
+write.table(data_mean_summary, file="data_mean_summary.txt", row.names = FALSE)
